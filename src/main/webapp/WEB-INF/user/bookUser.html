@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="row :${bookUser}"  >
+    <label>
+        <img style="width:100px;height: 200px" th:src="@{'/file-upload/' + ${row.book.getImage()}}" alt="anh">
+    </label>
+    <br>
+    <samp th:text="${row.book.getName()}"></samp>
+    <br>
+<!--    <samp th:text="${row.book.numberBook}"></samp>-->
+    <br>
+    <a th:href="@{/user/remote/{id}(id=${row.id})}" >Trả sách</a>
+</div>
+
+</body>
+</html>

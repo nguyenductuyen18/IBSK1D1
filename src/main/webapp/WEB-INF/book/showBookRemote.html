@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/user/delete}" th:object="${user}" method="post" >
+    <input th:value="${user.id}" th:field="${user.id}"  type="hidden">
+
+    <label>
+        <img style="width:100px;height: 200px" th:src="@{'/file-upload/' + ${user.book.image}}" alt="anh">
+    </label>
+    <br>
+    Tên sách:<samp th:text="${user.book.name}" ></samp>
+<!--    numberBook<samp th:text="${user.book.numberBook}" ></samp>-->
+    <input type="submit" value="Đồng ý">
+</form>
+
+</body>
+</html>
